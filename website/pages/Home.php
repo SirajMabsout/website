@@ -1,3 +1,9 @@
+<?php
+    session_start();
+    if (!isset($_SESSION["user"])){
+        header("location:../index.php");
+    }
+?>
 <head>
     <link rel="stylesheet" href="../CSS/mystyles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -5,35 +11,7 @@
 </head>
 
 <body>
-    <div class="background-menu" id="header">
-        <div class="div30 divl">
-            <div id="dropdown-menu">
-                <span><i class="ico menu-ico"></i>MENU</span>
-                <div class="dropdown-content">
-                    <ul>
-                        <a href="cv.html">
-                            <li><i class="fa fa-file yellow" aria-hidden="true"></i> My CV</li>
-                        </a>
-                        <a href="Portfolio.html">
-                            <li><i class="fa fa-archive yellow" aria-hidden="true"></i> My Portfolio</li>
-                        </a>
-                        <a href="Extra.html">
-                            <li><i class="fa fa-map yellow" aria-hidden="true"></i> Extra Curriculim</li>
-                        </a>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="div70 divl">
-            <div class="div60 divl">
-                <span class="menutext">Welcome To The Website Home Page <i class="fa fa-home" aria-hidden="true"></i></span>
-            </div>
-
-                
-                    
-                
-        </div>
-    </div>
+    <?php include 'menu.php'; ?>
     
         <div class="content">
             <div class="div50 divl">
@@ -107,21 +85,13 @@
                         <img class="img" src="../images/me2.jpeg">
                     </div>
                 </div>
-                <div class="div100 divL bck">
-                    <div class="div50 divL">
-                        <p class="yellow marL">Copyright Ⓒ 2024 Siraj Mabsout. All rights Reserved</p>
-                    </div>
-                    <div class="div50 divL ">
-                        
-                        <span><a href ="ContactUs.html" class ="end yellow marR"><i class="bi bi-telephone-inbound-fill"></i>   Contact Us</a></span>
-                    </div>
-
-                </div>  
+ 
     
             </div>
             
         </div>
-  
+    
+        <?php include 'copyright.php'; ?>
 
     
     </div>

@@ -1,3 +1,9 @@
+<?php
+    session_start();
+    if (!isset($_SESSION["user"])){
+        header("location:../index.php");
+    }
+?>
 <html>
     <head>
         <link rel="stylesheet" href="../CSS/mystyles.css">
@@ -7,33 +13,7 @@
     </head>
     <body>
 
-            <div class="background-menu" id="header">
-                <div class="div30 divl">
-                    <div id="dropdown-menu">
-                        <span><i class="ico menu-ico"></i>MENU</span>
-                        <div class="dropdown-content">
-                            <ul>
-                                <a href="Home.html">
-                                    <li><i class="fa fa-home yellow" aria-hidden="true"></i> Home Page</li>
-                                </a>
-                                <a href="cv.html">
-                                    <li><i class="fa fa-file yellow" aria-hidden="true"></i> My CV</li>
-                                </a>
-                                <a href="Extra.html">
-                                    <li><i class="fa fa-map yellow" aria-hidden="true"></i> Extra Curriculim</li>
-                                </a>
-                                <a href="COproject.html">
-                                    <li><i class="fa fa-microchip yellow" aria-hidden="true"></i> BBML</li>
-                                </a>
-                                <a href="DBMSproject.html">
-                                    <li><i class="fa fa-plane yellow" aria-hidden="true"></i> Fly Haraty</li>
-                                </a>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
+    <?php include 'menu.php'; ?>
         <div class="div100 content ">
             <br>
             <div class="div100 ">
@@ -63,7 +43,7 @@
             </div>
             <div class="div100 divR marT">
                 <div class="div40 divR">
-                    <a href="COproject.html" class="link-display">
+                    <a href="COproject.php" class="link-display">
                         <div class="listing-info"><i class="fa fa-microchip"></i> BBML</div>
                     </a>
                 </div>
@@ -99,7 +79,7 @@
 
                 </div>
                 <div class="div40 divR marT">
-                    <a href="DBMSproject.html" class="link-display">
+                    <a href="DBMSproject.php" class="link-display">
                         <div class="listing-info"><i class="fa fa-plane"></i> Fly Haraty </div>
                     </a>
                     <br><br>
@@ -113,16 +93,9 @@
 
         </div>
 
-
+        <?php include 'copyright.php'; ?>
         
-    <div class="div100 divL bck">
-                <div class="div50 divL">
-                    <p class="yellow marL">Copyright Ⓒ 2024 Siraj Mabsout. All rights Reserved</p>
-                </div>
-                <div class="div50 divL ">
-                    
-                    <span><a href ="ContactUs.html" class ="end yellow marR"><i class="bi bi-telephone-inbound-fill"></i>   Contact Us</a></span>
-                </div>    
+
     </body>
 
 

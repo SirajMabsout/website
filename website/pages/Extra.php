@@ -1,3 +1,9 @@
+<?php
+    session_start();
+    if (!isset($_SESSION["user"])){
+        header("location:../index.php");
+    }
+?>
 <html>
 <head>
     <link rel="stylesheet" href="../CSS/mystyles.css">
@@ -5,28 +11,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
 </head>
 <body>
-    <div class="background-menu" id="header">
-        <div class="div30 divl">
-            <div id="dropdown-menu">
-                <span><i class="ico menu-ico"></i>MENU</span>
-                <div class="dropdown-content">
-                    <ul>
-                        <a href="Home.html">
-                            <li><i class="fa fa-home yellow" aria-hidden="true"></i> Home Page</li>
-                        </a>
-                        <a href="cv.html">
-                            <li><i class="fa fa-map yellow" aria-hidden="true"></i> My CV</li>
-                        <a href="Portfolio.html">
-                            <li><i class="fa fa-archive yellow" aria-hidden="true"></i> My Portfolio</li>
-                        </a>
-
-                        </a>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-
+<?php include 'menu.php'; ?>
     <div class="content">
         <br><br>
         <div class="div50 divl">
@@ -154,16 +139,7 @@
     </div>
     </div>
 
-    <div class="div100 divL bck">
-        <div class="div50 divL">
-            <p class="yellow marL">Copyright Ⓒ 2024 Siraj Mabsout. All rights Reserved</p>
-        </div>
-        <div class="div50 divL ">
-            
-            <span><a href ="ContactUs.html" class ="end yellow marR"><i class="bi bi-telephone-inbound-fill"></i>   Contact Us</a></span>
-        </div>
-
-    </div>   
+    <?php include 'copyright.php'; ?>
 
 
                         

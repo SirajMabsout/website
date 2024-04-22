@@ -387,3 +387,28 @@ ul li span {
 .font {
     font-size: 120%;
 }
+
+.logout {
+    display: inline-block;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    margin-top: 4;
+}
+
+
+
+.wel{
+    display: inline-block;
+    line-height: 50px;
+    width: 100%;
+    text-align: right;
+    color: white;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: bold;
+    font-size: 110%;
+    overflow: hidden;
+    margin-right: 200;
+}

@@ -8,26 +8,52 @@
 <div class = "container1">
     <div class="form">
     <header>Signup</header>
-    <form action="#">
-      <input type="text" placeholder="Enter your username" name="username">
-      <input type="text" placeholder="Enter your first name" name="fname">
-      <input type="text" placeholder="Enter your last name" name = "lname">
-      <input type="date" id="dob" name="dob">
-      <input type="password" placeholder="Create a password" name="fpassword">
-      <input type="password" placeholder="Confirm your password" name="lpassword">
-      <input type="radio" name="sex" checked id="male" value="male">
+    <form action="php/signup.php" method="POST" id="form1">
+      <input type="text" placeholder="Enter your username" name="user" id="user">
+      <input type="text" placeholder="Enter your first name" name="fname" id="fname">
+      <input type="text" placeholder="Enter your last name" name = "lname" id = "lname">
+      <input type="date" name ="dob" id ="dob">
+      <input type="password" placeholder="Create a password" name="fpass" id="fpass">
+      <input type="password" placeholder="Confirm your password" name="lpass" id="lpass">
+      <input type="radio" name="sex"  checked id="male" value="male">
       <div class="font inline pr"><label for="male">Male</label></div>
-      <input type="radio" name="sex" id="female" value="female">
+      <input type="radio" name="sex"  id="female" value="female">
       <div class="font inline"><label for="male">Female</label></div>
-      <input type="button" class="button" value="Signup">
+      <input type="button" class="button" value="Signup" onclick='signup()'>
     </form>
-
+ 
     <div class="signup">
       <span class="signup">Already have an account?
-        <a href="index.html"class = "hlink">Log in</a></i>
+        <a href="index.php"class = "hlink">Log in</a></i>
       </span>
     </div>
 </div>
 </div>
+
+<script>
+  function signup(){
+      let user = document.getElementById("user").value;
+      let fpass = document.getElementById("fpass").value;
+      let lpass = document.getElementById("lpass").value;
+      let fname = document.getElementById("fname").value;
+      let lname = document.getElementById("lname").value;
+      let dob = document.getElementById("dob").value;
+      if ((user=="")||(fpass=="")||(lpass=="")||(fname=="")||(lname=="")||(dob==="")){
+          alert("Arguments missing!");
+      }
+      else if(fpass != lpass){
+          alert("Password does not match");
+          document.getElementById("fpass").value = "";
+          document.getElementById("lpass").value = "";
+      }
+      else if(fpass.length<8){
+          alert("minimum of 8 character password is required");
+      }
+      else{
+          document.getElementById("form1").submit();
+      }
+  }
+
+</script>
 </body>
 </html>

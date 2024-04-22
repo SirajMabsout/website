@@ -1,3 +1,9 @@
+<?php
+    session_start();
+    if (!isset($_SESSION["user"])){
+        header("location:../index.php");
+    }
+?>
 <head>
     <link rel="stylesheet" href="../CSS/mystyles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -5,29 +11,7 @@
 </head>
 
 <body>
-    <div class="background-menu" id="header">
-        <div class="div30 divl">
-            <div id="dropdown-menu">
-                <span><i class="ico menu-ico"></i>MENU</span>
-                <div class="dropdown-content">
-                    <ul>
-                        <a href="Home.html">
-                            <li><i class="fa fa-home yellow" aria-hidden="true"></i> Home Page</li>
-                        </a>
-                        <a href="cv.html">
-                            <li><i class="fa fa-file yellow" aria-hidden="true"></i> My CV</li>
-                        </a>
-                        <a href="Portfolio.html">
-                            <li><i class="fa fa-archive yellow" aria-hidden="true"></i> My Portfolio</li>
-                        </a>
-                        <a href="Extra.html">
-                            <li><i class="fa fa-map yellow" aria-hidden="true"></i> Extra Curriculim</li>
-                        </a>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
+    <?php include 'menu.php'; ?>
     <div class="content">
         <div class="div100 marT marL"><h11><br>Hope everything was ok with you while traversing the website
             if you want to contact us reach us out

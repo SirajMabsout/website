@@ -1,3 +1,9 @@
+<?php
+    session_start();
+    if (!isset($_SESSION["user"])){
+        header("location:../index.php");
+    }
+?>
 <head>
     <link rel="stylesheet" href="../CSS/mystyles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -5,21 +11,7 @@
 </head>
 
 <body>
-    <div class="background-menu" id="header">
-        <div class="div30 divl">
-            <div id="dropdown-menu">
-                <span><i class="ico menu-ico"></i>MENU</span>
-                <div class="dropdown-content">
-                    <ul>
-                        <a href="Portfolio.html">
-                            <li><i class="fa fa-archive yellow" aria-hidden="true"></i> My Portfolio</li>
-                        </a>
-
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
+<?php include 'menu.php'; ?>
     
     <div class="content">
         <div class="div100 divL p1">
@@ -133,16 +125,8 @@
             <div class="listing-info marT"><i class="fa fa-microchip"></i> BBL</div>
             
         </a>
-        <div class="div100 divL bck marT">
-            <div class="div50 divL">
-                <p class="yellow marL">Copyright Ⓒ 2024 Siraj Mabsout. All rights Reserved</p>
-            </div>
-            <div class="div50 divL ">
-                
-                <span><a href ="ContactUs.html" class ="end yellow marR"><i class="bi bi-telephone-inbound-fill"></i>   Contact Us</a></span>
-            </div>
-
-        </div>  
+        <br>
+        <?php include 'copyright.php'; ?>
         </div>
     </div>
     
