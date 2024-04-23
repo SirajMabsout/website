@@ -74,7 +74,7 @@
             $images = file("Flyimage.txt");
 
             foreach ($images as $nb => $image){
-                $main = "../database project/{$image}.png";
+                $main = "../database project/{$image}.PNG";
             ?>
 
         <div id="image<?= $nb+1 ?>" class="background">
