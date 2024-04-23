@@ -55,64 +55,41 @@
         </div>
 
         <div class="div100 divL">
-            <div class="thumb">
-                <a href="#Open_in_Same_page1" class="point_on1">
-                    <img src="../database project/ERT.png">
-                </a>
-            </div>
-    
-            <div class="thumb">
-                <a href="#Open_in_Same_page2" class="point_on1">
-                    <img src="../database project/table.jpg">
-                </a>
-            </div>
-    
-            <div class="thumb">
-                <a href="#Open_in_Same_page3" class="point_on1">
-                    <img src="../database project/data.jpg">
-                </a>
-            </div>
-            <div class="thumb">
-                <a href="#Open_in_Same_page4" class="point_on1">
-                    <img src="../database project/re.jpg">
+        <?php 
+            $images = file("Flyimage.txt");
+
+            foreach ($images as $nb => $image){
+                $thumb = "../database project/{$image}T.png";
+            ?>
+            <div class="thumbnail">
+                <a href="#image<?= $nb+1?>" class="click1">
+                    <img src="<?=$thumb?>">
                 </a>
             </div>
 
-            <div id="Open_in_Same_page1" class="background">
-                <a href="">
-                    <div class="Back-button">Back</div>
-                </a>
-                <div class="background2">
-                    <img src="../database project/ER.png">
-                </div>
+            <?php } ?>
+
+
+            <?php
+            $images = file("Flyimage.txt");
+
+            foreach ($images as $nb => $image){
+                $main = "../database project/{$image}.png";
+            ?>
+
+        <div id="image<?= $nb+1 ?>" class="background">
+            <a href="">
+                <div class="button">Back to Gallery</div>
+            </a>
+            <div class="background2">
+                <img src="<?=$main ?>">
             </div>
-        
-            <div id="Open_in_Same_page2" class="background">
-                <a href="">
-                    <div class="Back-button">Back</div>
-                </a>
-                <div class="background2">
-                    <img src="../database project/Table.PNG">
-                </div>
-            </div>
-        
-            <div id="Open_in_Same_page3" class="background">
-                <a href="">
-                    <div class="Back-button">Back</div>
-                </a>
-                <div class="background2">
-                    <img src="../database project/datainsertion.PNG">
-                </div>
-            </div>
-        
-            <div id="Open_in_Same_page4" class="background">
-                <a href="">
-                    <div class="Back-button">Back</div>
-                </a>
-                <div class="background2">
-                    <img src="../database project/normalization.PNG">
-                </div>
-            </div>
+        </div>
+
+        <?php } ?>
+        </div>
+    </div>
+    <div class = "div100 divL">
         
         <h11 class="marL">You can find below the full documentation for the project,click on the box</h11>
         <a href="../database project/DBMS_Project.pdf" class="link-display ">
@@ -120,10 +97,12 @@
             
         </a>
         <br>
+    </div>
+        <?php include 'copyright.php'; ?>
         
         </div>  
     </div>
-    <?php include 'copyright.php'; ?>
+    
 
     </div>
 

@@ -45,96 +45,39 @@
     </div>
     
     <div class="div100 divL">
-        <div class="thumb">
-            <a href="#Open_in_Same_page1" class="point_on">
-                <img src="../extraC/thumb1.png">
+
+    <?php 
+            $images = file("Extraimage.txt");
+
+            foreach ($images as $nb => $image){
+                $thumb = "../extraC/{$image}T.png";
+            ?>
+            <div class="thumbnail">
+                <a href="#image<?= $nb+1?>" class="click">
+                    <img src="<?=$thumb?>">
+                </a>
+            </div>
+
+            <?php } ?>
+
+
+            <?php
+            $images = file("Extraimage.txt");
+
+            foreach ($images as $nb => $image){
+                $main = "../extraC/{$image}.jpeg";
+            ?>
+
+        <div id="image<?= $nb+1 ?>" class="background">
+            <a href="">
+                <div class="button">Back to Gallery</div>
             </a>
+            <div class="background2">
+                <img src="<?=$main?>">
+            </div>
         </div>
 
-        <div class="thumb">
-            <a href="#Open_in_Same_page2" class="point_on">
-                <img src="../extraC/thumb1.png">
-            </a>
-        </div>
-
-        <div class="thumb">
-            <a href="#Open_in_Same_page3" class="point_on">
-                <img src="../extraC/basket.png">
-            </a>
-        </div>
-        <div class="thumb">
-            <a href="#Open_in_Same_page4" class="point_on">
-                <img src="../extraC/basket.png">
-            </a>
-
-        </div>
-
-        <div class="thumb">
-            <a href="#Open_in_Same_page5" class="point_on">
-                <img src="../extraC/thumb2.jpeg">
-            </a>
-        </div>
-
-        <div class="thumb">
-            <a href="#Open_in_Same_page6" class="point_on">
-                <img src="../extraC/thumb2.jpeg">
-            </a>
-        </div>
-
-
-    
-
-    <div id="Open_in_Same_page1" class="background">
-        <a href="">
-            <div class="Back-button">Back</div>
-        </a>
-        <div class="background2">
-            <img src="../extraC/ibad1.jpeg">
-        </div>
-    </div>
-
-    <div id="Open_in_Same_page2" class="background">
-        <a href="">
-            <div class="Back-button">Back</div>
-        </a>
-        <div class="background2">
-            <img src="../extraC/ibad2.jpeg">
-        </div>
-    </div>
-
-    <div id="Open_in_Same_page3" class="background">
-        <a href="">
-            <div class="Back-button">Back</div>
-        </a>
-        <div class="background2">
-            <img src="../extraC/ibad3.jpeg">
-        </div>
-    </div>
-
-    <div id="Open_in_Same_page4" class="background">
-        <a href="">
-            <div class="Back-button">Back</div>
-        </a>
-        <div class="background2">
-            <img src="../extraC/ibad4.jpeg">
-        </div>
-    </div>
-
-    <div id="Open_in_Same_page5" class="background">
-        <a href="">
-            <div class="Back-button">Back</div>
-        </a>
-        <div class="background2">
-            <img src="../extraC/nald1.jpeg">
-        </div>
-    </div>
-
-    <div id="Open_in_Same_page6" class="background">
-        <a href="">
-            <div class="Back-button">Back</div>
-        </a>
-        <div class="background2">
-            <img src="../extraC/nald2.jpeg">
+        <?php } ?>
         </div>
     </div>
     </div>

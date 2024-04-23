@@ -61,64 +61,44 @@
         </div>
 
         <div class="div100 divL">
-            <div class="thumb">
-                <a href="#Open_in_Same_page1" class="point_on1">
-                    <img src="../CO project/testt.png">
-                </a>
-            </div>
-    
-            <div class="thumb">
-                <a href="#Open_in_Same_page2" class="point_on1">
-                    <img src="../CO project/result.jpg">
-                </a>
-            </div>
-    
-            <div class="thumb">
-                <a href="#Open_in_Same_page3" class="point_on1">
-                    <img src="../CO project/testt.png">
-                </a>
-            </div>
-            <div class="thumb">
-                <a href="#Open_in_Same_page4" class="point_on1">
-                    <img src="../CO project/result.jpg">
+
+
+        <?php 
+            $images = file("COimage.txt");
+
+            foreach ($images as $nb => $image){
+                $thumb = "../CO project/{$image}T.png";
+            ?>
+            <div class="thumbnail">
+                <a href="#image<?= $nb+1?>" class="click1">
+                    <img src="<?=$thumb?>">
                 </a>
             </div>
 
-            <div id="Open_in_Same_page1" class="background">
-                <a href="">
-                    <div class="Back-button">Back</div>
-                </a>
-                <div class="background2">
-                    <img src="../CO project/test.PNG">
-                </div>
+            <?php } ?>
+
+
+            <?php
+            $images = file("COimage.txt");
+
+            foreach ($images as $nb => $image){
+                $main = "../CO project/{$image}.PNG";
+            ?>
+
+        <div id="image<?= $nb+1 ?>" class="background">
+            <a href="">
+                <div class="button">Back to Gallery</div>
+            </a>
+            <div class="background2">
+                <img src="<?=$main?>">
             </div>
-        
-            <div id="Open_in_Same_page2" class="background">
-                <a href="">
-                    <div class="Back-button">Back</div>
-                </a>
-                <div class="background2">
-                    <img src="../CO project/out.PNG">
-                </div>
-            </div>
-        
-            <div id="Open_in_Same_page3" class="background">
-                <a href="">
-                    <div class="Back-button">Back</div>
-                </a>
-                <div class="background2">
-                    <img src="../CO project/test2.PNG">
-                </div>
-            </div>
-        
-            <div id="Open_in_Same_page4" class="background">
-                <a href="">
-                    <div class="Back-button">Back</div>
-                </a>
-                <div class="background2">
-                    <img src="../CO project/out2.PNG">
-                </div>
-            </div>
+        </div>
+
+        <?php } ?>
+        </div>
+    </div>
+
+    <div class = "div100 divL">
         
         <h11 class="marL">You can find below a youtube video testing the project,click on the box</h11>
         <a href="https://www.youtube.com/watch?v=IMbEWYxZAkA" class="link-display ">
@@ -126,9 +106,11 @@
             
         </a>
         <br>
+    </div>
         <?php include 'copyright.php'; ?>
         </div>
     </div>
+
     
 
     </div>

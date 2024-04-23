@@ -1,6 +1,29 @@
 <?php
 
+function miss(){
+    if (isset($_POST['user']) && isset($_POST['fname']) && isset($_POST['lname'])
+        && isset($_POST['fpass']) && isset($_POST['dob']) && isset($_POST['sex'])) {
+        return 0;
+    } else {
+        return 1;
+    }
+}
 
+
+
+function findUser2($username){
+    if (($file = fopen("users.csv", "r")) !== FALSE) {
+        while (($data = fgetcsv($file, 1000, ",")) !== FALSE) {
+            $existingUser = empty($data[0]) ? "&nbsp;" : $data[0];
+            if($existingUser == $username){
+                fclose($file);
+                return true;
+            }
+        }
+        fclose($file);
+    }
+    return false;
+}
 
 if (!miss()) {
     $user = $_POST['user'];
@@ -44,26 +67,6 @@ else{
     echo '<script>window.location.href = "../index.php";</script>';
 }
 
-function miss(){
-    if (isset($_POST['user']) && isset($_POST['fname']) && isset($_POST['lname'])
-        && isset($_POST['fpass']) && isset($_POST['dob']) && isset($_POST['sex'])) {
-        return 0;
-    } else {
-        return 1;
-    }
-}
 
-function findUser2($username){
-    if (($file = fopen("users.csv", "r")) !== FALSE) {
-        while (($data = fgetcsv($file, 1000, ",")) !== FALSE) {
-            $existingUser = empty($data[0]) ? "&nbsp;" : $data[0];
-            if($existingUser == $username){
-                fclose($file);
-                return true;
-            }
-        }
-        fclose($file);
-    }
-    return false;
-}
+
 ?>
